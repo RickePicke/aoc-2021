@@ -1,0 +1,14 @@
+import { asArray } from '../utils/read-input';
+
+const data = asArray('src/${DAY}/input.txt');
+
+const part1 = () => {
+    console.log('Part 1: ', data);
+};
+
+const part2 = () => {
+    console.log('Part 2: ', data);
+};
+
+part1();
+part2();

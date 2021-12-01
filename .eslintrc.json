@@ -1,0 +1,36 @@
+{
+    "extends": [ "eslint:recommended", "plugin:prettier/recommended" ],
+    "env": {
+        "browser": false,
+        "node": true,
+        "es6": true,
+        "jest": true
+    },
+    "parserOptions": {
+        "ecmaVersion": 2021,
+        "sourceType": "module",
+        "ecmaFeatures": { "jsx": true }
+    },
+    "overrides": [
+        {
+            "files": ["*.ts"],
+            "parser": "@typescript-eslint/parser",
+            "extends": ["plugin:@typescript-eslint/recommended"]
+        },
+        {
+            "files": ["*.tsx"],
+            "rules": { "@typescript-eslint/explicit-module-boundary-types": "off" }
+        }
+    ],
+    "rules": {
+        "semi": ["error", "always"],
+        "array-bracket-spacing": "off",
+        "no-console": "off"
+    },
+    "ignorePatterns": [
+        "@types/graphql.d.ts",
+        "@types/sales-read-offering.d.ts",
+        "generate-swagger-types.js",
+        "dist"
+    ]
+}

@@ -1,0 +1,32 @@
+{
+  "name": "aoc-2021",
+  "version": "0.0.0",
+  "description": "None",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "dev": "nodemon",
+    "typecheck": "tsc --noEmit",
+    "test": "echo \"No tests implemented.\"; exit 0;",
+    "lint": "eslint . --ext .js,.ts --max-warnings=0",
+    "lint:fix": "eslint . --ext .js,.ts --fix",
+    "prepare": "husky install",
+    "add-day": "ts-node ./add-day.ts"
+  },
+  "author": "Rickard Börjesson",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "14.14.31",
+    "@typescript-eslint/eslint-plugin": "~4.14.1",
+    "@typescript-eslint/parser": "~4.14.1",
+    "eslint": "~7.29.0",
+    "eslint-config-prettier": "~8.3.0",
+    "eslint-plugin-prettier": "~3.4.0",
+    "nodemon": "2.0.7",
+    "prettier": "^2.3.0",
+    "ts-node": "9.1.1",
+    "typescript": "4.4.3",
+    "husky": "5.1.2",
+    "jest": "^27.2.5",
+    "ts-jest": "^27.0.5"
+  }
+}
