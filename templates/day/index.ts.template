@@ -3,11 +3,11 @@ import { asArray } from '../utils/read-input';
 const data = asArray('src/${DAY}/input.txt');
 
 const part1 = () => {
-    return data;
+  return data;
 };
 
 const part2 = () => {
-    return data;
+  return data;
 };
 
 console.log('Part 1: ', part1());
