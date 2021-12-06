@@ -5,22 +5,19 @@ const data = asArray('src/06/input.txt')[0]
   .split(',')
   .map((n) => parseInt(n));
 
-type TimerCountMap = { [key: number]: number };
-
 const checkDays = (maxDays: number): number => {
-  const timers = data.reduce((acc: TimerCountMap, curr) => ({ ...acc, [curr]: (acc[curr] || 0) + 1 }), {});
-  const result = checkDay(1, timers);
+  const emptySchool = Array(9).fill(0);
+  const timers = [...emptySchool].map((_, i) => data.filter((n) => i === n).length);
 
-  return sum(Object.values(result));
+  return sum(checkDay(1, timers));
 
-  function checkDay(day: number, timers: TimerCountMap): TimerCountMap {
-    const nextTimers: TimerCountMap = {
-      6: timers[0] || 0,
-      8: timers[0] || 0,
-    };
+  function checkDay(day: number, timers: number[]): number[] {
+    const nextTimers = [...emptySchool];
+    nextTimers[6] += timers[0];
+    nextTimers[8] += timers[0];
 
     for (let i = 1; i < 9; i++) {
-      nextTimers[i - 1] = (nextTimers[i - 1] || 0) + (timers[i] || 0);
+      nextTimers[i - 1] = nextTimers[i - 1] + timers[i];
     }
 
     return day < maxDays ? checkDay(day + 1, nextTimers) : nextTimers;
